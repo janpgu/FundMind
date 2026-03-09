@@ -2,17 +2,18 @@
 
 [![Tests](https://github.com/janpgu/FundMind/actions/workflows/tests.yml/badge.svg)](https://github.com/janpgu/FundMind/actions/workflows/tests.yml)
 
-Downloads fund documents from [fundinfo.com](https://www.fundinfo.com) for a list of ISINs and tracks what was downloaded in an Excel file.
+Downloads fund documents from [fundinfo.com](https://www.fundinfo.com) for a list of ISINs, enriches them with fund metadata, and tracks everything in an Excel file.
 
 ## What it does
 
 Given a list of fund ISINs in `funds.xlsx`, the script:
 
-1. Queries the fundinfo.com API for each ISIN to discover all available documents
-2. Downloads every document type available (prospectus, monthly report, KIID, etc.)
-3. Picks the best language variant per document (EN > DE > FR > IT > ES)
-4. Skips files that already exist locally (safe to re-run)
-5. Updates `funds.xlsx` with a column per document type showing the downloaded filename
+1. Fetches fund metadata (legal form, TER, domicile, currency, ManCo, launch date, etc.)
+2. Queries the fundinfo.com API for each ISIN to discover all available documents
+3. Downloads every document type available (prospectus, monthly report, KIID, etc.)
+4. Picks the best language variant per document (EN > DE > FR > IT > ES)
+5. Skips files that already exist locally (safe to re-run)
+6. Updates `funds.xlsx` with metadata columns and a column per document type showing the downloaded filename
 
 ## Project structure
 
