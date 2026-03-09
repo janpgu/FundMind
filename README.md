@@ -1,5 +1,7 @@
 # FundMind
 
+[![Tests](https://github.com/janpgu/FundMind/actions/workflows/tests.yml/badge.svg)](https://github.com/janpgu/FundMind/actions/workflows/tests.yml)
+
 Downloads fund documents from [fundinfo.com](https://www.fundinfo.com) for a list of ISINs and tracks what was downloaded in an Excel file.
 
 ## What it does
