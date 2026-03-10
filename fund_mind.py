@@ -425,7 +425,7 @@ async def run_pipeline(config: Config) -> list[DownloadResult]:
     logger.info("Loaded %d fund(s) from %s", len(funds), config.excel_file)
 
     semaphore = asyncio.Semaphore(config.max_concurrency)
-    async with httpx.AsyncClient(cookies=config.cookies) as client:
+    async with httpx.AsyncClient(cookies=config.cookies, verify=False) as client:
         results = await asyncio.gather(*[
             process_fund(fund, client, config, semaphore) for fund in funds
         ])
